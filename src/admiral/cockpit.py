@@ -9,7 +9,7 @@ logger = logging.getLogger('admiral')
 request = RequestConfig()
 
 
-def deploy(**args):
+def deploy(**args):  #pragma: no cover
     clients = ClientCache(args.get('region', 'us-east-1'))
     ec2 = clients.ec2()
     config = request.generate(args)

@@ -68,24 +68,27 @@ class RequestConfig(object):
 
                 if not isinstance(subnets, basestring):
                     for subnet in subnets:
-                        collection.append(self._generator(instance_type,
-                                                          subnet,
-                                                          specifications))
+                        spec = self._generator(instance_type,
+                                               subnet,
+                                               specifications)
+                        collection.append(spec)
                 else:
-                    collection.append(self._generator(instance_type,
-                                                      subnets,
-                                                      specifications))
+                    spec = self._generator(instance_type,
+                                           subnets,
+                                           specifications)
+                    collection.append(spec)
         else:
             if not isinstance(subnets, basestring):
                 for subnet in subnets:
-                    collection.append(self._generator(instance_types,
-                                                      subnet,
-                                                      specifications))
+                    spec = self._generator(instance_types,
+                                           subnet,
+                                           specifications)
+                    collection.append(spec)
             else:
-                specs = self._generator(instance_types,
-                                        subnets,
-                                        specifications)
-                collection.append(specs)
+                spec = self._generator(instance_types,
+                                       subnets,
+                                       specifications)
+                collection.append(spec)
 
         return collection
 
