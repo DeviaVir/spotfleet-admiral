@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 requires = [req for req in open('requirements.txt').read().splitlines()
             if not req.startswith('git')]
 
-setup(name='spotfleet-admiral',
+setup(name='admiral',
       version='0.0.1',
       description='SpotFleet Admiral',
       long_description=open('README.md').read(),
